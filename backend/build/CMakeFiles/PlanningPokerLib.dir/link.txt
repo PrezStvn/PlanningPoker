@@ -1,0 +1,2 @@
+/usr/bin/ar qc libPlanningPokerLib.a CMakeFiles/PlanningPokerLib.dir/src/WebSocketServer.cpp.o CMakeFiles/PlanningPokerLib.dir/src/SessionManager.cpp.o
+/usr/bin/ranlib libPlanningPokerLib.a

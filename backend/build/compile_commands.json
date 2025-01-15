@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/prezstvn/dev/workspace/PlanningPoker/backend/build",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I/home/prezstvn/dev/workspace/PlanningPoker/backend/include -std=gnu++17 -o CMakeFiles/PlanningPokerLib.dir/src/WebSocketServer.cpp.o -c /home/prezstvn/dev/workspace/PlanningPoker/backend/src/WebSocketServer.cpp",
+  "file": "/home/prezstvn/dev/workspace/PlanningPoker/backend/src/WebSocketServer.cpp"
+},
+{
+  "directory": "/home/prezstvn/dev/workspace/PlanningPoker/backend/build",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I/home/prezstvn/dev/workspace/PlanningPoker/backend/include -std=gnu++17 -o CMakeFiles/PlanningPokerLib.dir/src/SessionManager.cpp.o -c /home/prezstvn/dev/workspace/PlanningPoker/backend/src/SessionManager.cpp",
+  "file": "/home/prezstvn/dev/workspace/PlanningPoker/backend/src/SessionManager.cpp"
+},
+{
+  "directory": "/home/prezstvn/dev/workspace/PlanningPoker/backend/build",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I/home/prezstvn/dev/workspace/PlanningPoker/backend/include -std=gnu++17 -o CMakeFiles/PlanningPokerBackend.dir/src/main.cpp.o -c /home/prezstvn/dev/workspace/PlanningPoker/backend/src/main.cpp",
+  "file": "/home/prezstvn/dev/workspace/PlanningPoker/backend/src/main.cpp"
+},
+{
+  "directory": "/home/prezstvn/dev/workspace/PlanningPoker/backend/build/tests",
+  "command": "/usr/bin/c++ -DFMT_SHARED -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -I/home/prezstvn/dev/workspace/PlanningPoker/backend/include -std=gnu++17 -o CMakeFiles/test_main.dir/test_main.cpp.o -c /home/prezstvn/dev/workspace/PlanningPoker/backend/tests/test_main.cpp",
+  "file": "/home/prezstvn/dev/workspace/PlanningPoker/backend/tests/test_main.cpp"
+}
+]

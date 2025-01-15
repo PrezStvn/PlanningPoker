@@ -1,0 +1,7 @@
+/home/prezstvn/dev/workspace/PlanningPoker/backend/build/CMakeFiles/PlanningPokerLib.dir
+/home/prezstvn/dev/workspace/PlanningPoker/backend/build/CMakeFiles/PlanningPokerBackend.dir
+/home/prezstvn/dev/workspace/PlanningPoker/backend/build/CMakeFiles/edit_cache.dir
+/home/prezstvn/dev/workspace/PlanningPoker/backend/build/CMakeFiles/rebuild_cache.dir
+/home/prezstvn/dev/workspace/PlanningPoker/backend/build/tests/CMakeFiles/test_main.dir
+/home/prezstvn/dev/workspace/PlanningPoker/backend/build/tests/CMakeFiles/edit_cache.dir
+/home/prezstvn/dev/workspace/PlanningPoker/backend/build/tests/CMakeFiles/rebuild_cache.dir

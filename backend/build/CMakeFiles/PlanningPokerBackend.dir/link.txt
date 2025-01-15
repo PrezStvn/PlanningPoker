@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/PlanningPokerBackend.dir/src/main.cpp.o -o PlanningPokerBackend  libPlanningPokerLib.a /usr/lib/aarch64-linux-gnu/libsqlite3.so /usr/lib/aarch64-linux-gnu/libspdlog.so.1.10.0 /usr/lib/aarch64-linux-gnu/libfmt.so.9.1.0 

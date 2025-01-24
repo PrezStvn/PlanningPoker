@@ -6,12 +6,14 @@
 #include <vector>
 #include <map>
 #include <functional>
+#include <nlohmann/json.hpp>
 
 class SessionManager {
 public:
     SessionManager();
     
-    void handleMessage(const std::string& message);
+    // Single parameter message handler
+    void handleMessage(const std::string& jsonMessage);
 
 private:
     // Command handlers
@@ -23,6 +25,7 @@ private:
     std::map<std::string, std::string> currentVotes;  // userId -> voteValue
     std::map<std::string, std::string> userNames;     // userId -> displayName
     std::vector<std::string> messageHistory;
+    std::map<std::string, std::string> userConnections;  // connectionId -> userId
 
     // Command map type: command -> handler function
     using CommandHandler = std::function<void(const std::string&, const std::string&)>;

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <sstream>
 #include <functional>
+#include <nlohmann/json.hpp>
 
 SessionManager::SessionManager() {
     // Initialize the command map with function pointers
@@ -26,7 +27,8 @@ void SessionManager::handleVote(const std::string& userId, const std::string& vo
 }
 
 void SessionManager::handlePost(const std::string& userId, const std::string& message) {
-    std::string formattedMessage = userId + ": " + message;
+    std::string userName = userNames.count(userId) ? userNames[userId] : userId;
+    std::string formattedMessage = userName + ": " + message;
     messageHistory.push_back(formattedMessage);
     std::cout << "Post received: " << formattedMessage << std::endl;
 }
@@ -36,20 +38,30 @@ void SessionManager::handleSetName(const std::string& userId, const std::string&
     std::cout << "User " << userId << " changed name to: " << newName << std::endl;
 }
 
-void SessionManager::handleMessage(const std::string& message) {
-    std::istringstream iss(message);
-    std::string command;
-    
-    // Get the command (everything before the ':')
-    if (std::getline(iss, command, ':')) {
+void SessionManager::handleMessage(const std::string& jsonMessage) {
+    try {
+        // Parse the JSON message
+        nlohmann::json msgJson = nlohmann::json::parse(jsonMessage);
+        
+        // Extract connection_id and command type
+        std::string connectionId = msgJson["connection_id"];
+        std::string command = msgJson["type"];
+        
+        // Get or create userId for this connection
+        std::string userId;
+        if (userConnections.count(connectionId)) {
+            userId = userConnections[connectionId];
+        } else {
+            // If this is a new connection, create a temporary userId
+            userId = "user-" + connectionId.substr(0, 8);  // Use first 8 chars of connection ID
+            userConnections[connectionId] = userId;
+        }
+        
+        // Extract content based on command type
         std::string content;
-        std::getline(iss, content);  // Get the rest of the message
-        
-        // Remove leading whitespace from content
-        content.erase(0, content.find_first_not_of(" \t\n\r\f\v"));
-        
-        // Assuming userId is passed as part of the content for now
-        std::string userId = "temp-user-id";  // This should come from connection info
+        if (msgJson.contains("content")) {
+            content = msgJson["content"];
+        }
         
         // Look up the command in our map and execute if found
         auto handlerIt = commandHandlers.find(command);
@@ -58,5 +70,11 @@ void SessionManager::handleMessage(const std::string& message) {
         } else {
             std::cout << "Unknown command: " << command << std::endl;
         }
+    }
+    catch (const nlohmann::json::exception& e) {
+        std::cerr << "JSON parsing error: " << e.what() << std::endl;
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Error processing message: " << e.what() << std::endl;
     }
 }

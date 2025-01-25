@@ -16,6 +16,7 @@ private:
     void handle_request(boost::beast::http::request<boost::beast::http::string_body>& req,
                        boost::beast::http::response<boost::beast::http::string_body>& res);
     std::string load_static_file(const std::string& path);
+    std::string generate_session_id();
     
     int port;
     boost::asio::io_context ioc;
